@@ -1,0 +1,30 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet">
+        
+<link href="https://unpkg.com/video.js@7/dist/video-js.min.css" rel="stylesheet" />
+<link href="css/stream-player.css" rel="stylesheet" />
+<script src="https://unpkg.com/@videojs/http-streaming@2.9.0/dist/videojs-http-streaming.min.js"></script>
+<script src="https://vjs.zencdn.net/7.6.0/video.js"></script>
+<section id="player">
+    <div class="shadow-3-strong">
+        <div class="col">
+            <video
+                id="stream"
+                class="video-js vjs-theme-forest"
+                controls 
+                loop 
+                autoplay
+                preload="auto"
+                width="100%"
+                poster="https://i.postimg.cc/kMjNyYJw/live-broadcast.png"
+                data-setup='{ "fluid": true }'>
+                <source
+                    src="https://d2e1asnsl7br7b.cloudfront.net/7782e205e72f43aeb4a48ec97f66ebbe/index.m3u8"
+                    type="application/x-mpegurl"
+                />
+                <source                          
+                src="https://content.jwplatform.com/manifests/vM7nH0Kl.m3u8"                              
+                type="application/x-mpegurl"/>
+            </video>
+        </div>
+    </div>
+</section>
