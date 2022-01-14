@@ -5,6 +5,10 @@
 <head>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
         crossorigin="anonymous">
+    <link href="https://unpkg.com/video.js@7/dist/video-js.min.css" rel="stylesheet" />
+    <link href="https://haqem.github.io/obs-vod/css/player.css" rel="stylesheet" />
+    <script src="https://unpkg.com/@videojs/http-streaming@2.9.0/dist/videojs-http-streaming.min.js"></script>
+    <script src="https://vjs.zencdn.net/7.6.0/video.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
@@ -16,8 +20,6 @@
     <script src="./js/shaka-player.compiled.js"></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://mewatchsg.samsam123.tk/web-player/index.html">
     <meta property="og:title" content="meWATCH SG Live | Web Player">
     <meta property="og:description"
         content="Watch various channels from meWATCH SG via this web player. This web player only support Google Chrome on Windows / Android / macOS! iOS/iPadOS isn't supported!">
@@ -26,36 +28,6 @@
 
 <body>
     <div class="px-4 py-5 my-5 text-center">
-        <h1 class="display-5 fw-bold">meWATCH SG Live | Web Player</h1> </br>
-        <h2 class="lead mb-4">This web player only support Google Chrome on Windows / Android / macOS!</br>iOS/iPadOS
-            isn't supported!</br><a href="https://github.com/samleong123/mewatchsg">Source code / 源码</a> </h2>
-        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-            <div>
-                <button type="button" onclick="window.location.href='./index.html'"
-                    class="btn btn-primary btn-lg px-4 gap-3">Channel 5</button>
-                <button type="button" onclick="window.location.href='./channel8.html'"
-                    class="btn btn-outline-secondary btn-lg px-4">Channel 8</button>
-                <button type="button" onclick="window.location.href='./channelu.html'"
-                    class="btn btn-outline-secondary btn-lg px-4">Channel U</button>
-                <button type="button" onclick="window.location.href='./channelsuria.html'"
-                    class="btn btn-outline-secondary btn-lg px-4">Channel Suria</button>
-                <button type="button" onclick="window.location.href='./channelvasantham.html'"
-                    class="btn btn-outline-secondary btn-lg px-4">Channel Vasantham</button>
-                <button type="button" onclick="window.location.href='./cna.html'"
-                    class="btn btn-outline-secondary btn-lg px-4">CNA</button>
-                <button type="button" onclick="window.location.href='./oktolidays.html'"
-                    class="btn btn-outline-secondary btn-lg px-4">oktolidays</button>
-            </div>
-            <div>
-                <button type="button" onclick="window.location.href='./globalcitizen.html'"
-                    class="btn btn-outline-secondary btn-lg px-4">Global Citizen</button>
-                <button type="button" onclick="window.location.href='./mewatchlive1.html'"
-                    class="btn btn-outline-secondary btn-lg px-4">meWATCH LIVE 1</button>
-                <button type="button" onclick="window.location.href='./mewatchlive2.html'"
-                    class="btn btn-outline-secondary btn-lg px-4">meWATCH LIVE 2</button>
-            </div>
-        </div>
-        </br>
         <center>
             <div data-shaka-player-container style="max-width:40em" data-shaka-player-cast-receiver-id="1BA79154">
                 <!-- The data-shaka-player tag will make the UI library use this video element.
@@ -64,6 +36,18 @@
             </div>
         </center>
     </div>
+
+    <section id="player">
+        <div class="shadow-3-strong">
+            <div class="col" data-shaka-player-cast-receiver-id="1BA79154">
+                <video id="video" class="video-js vjs-theme-forest" controls data-shaka-player loop autoplay
+                    preload="auto" width="100%" poster="https://i.postimg.cc/kMjNyYJw/live-broadcast.png"
+                    data-setup='{ "fluid": true }'>
+                </video>
+            </div>
+        </div>
+    </section>
+
     <script>
 
         const manifestUri =
